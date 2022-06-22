@@ -1,0 +1,6 @@
+function generateWebPage(data) {
+    return`
+
+
+    `
+}
