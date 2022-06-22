@@ -1,6 +1,8 @@
 const inquirer = require('inquirer');
 // import inquirer from 'inquirer';
 const fs = require('fs');
+const Manager = require("./lib/Manager");
+const generateWebPage = require("./src/generateWebPage.js");
 
 const promptUser = () => {
     return inquirer.prompt([
@@ -32,8 +34,37 @@ const promptUser = () => {
     ])
 }
 
+const createManager = (data) => {
+    return new Manager(data.name, data.id, data.email, data.officeNumber);
+
+    console.log(manager);
+}
+
+function writeToFile(data) {
+    return new Promise((resolve, reject) => {
+        fs.writeFile("./dist/index.html", data, err => {
+            if(err) {
+                reject(err);
+                return;
+            }
+            
+            resolve({
+                ok: true,
+                message: "File Created"
+            })
+        })
+    })
+}
+
 const startApp = () => {
-    promptUser();
+    promptUser()
+        .then(data => {
+            return createManager(data);
+        })
+        .then(manager => {
+            return generateWebPage(manager);
+        })
+        .then(webPage => writeToFile(webPage));
 }
 
 startApp();
