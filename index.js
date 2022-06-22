@@ -122,7 +122,7 @@ const internPrompt = () => {
         },
         {
             type: "input",
-            name: "github",
+            name: "school",
             message: "What is the Intern's school name?"
         }
     ])

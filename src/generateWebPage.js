@@ -25,8 +25,8 @@ function createEngineerCards(engineersArray) {
 
 function createInternCards(internsArray) {
     htmlInterns = [];
-    for(let i = 0; i < engineersArray.length; i++) {
-        htmlEngineers.push(`
+    for(let i = 0; i < internsArray.length; i++) {
+        htmlInterns.push(`
         <div>
             ${internsArray[i].name}
             ${internsArray[i].id}
@@ -52,7 +52,7 @@ function generateWebPage(manager, engineersArray, internsArray) {
             <div id="main">
                 ${createManagerCard(manager)}
                 ${createEngineerCards(engineersArray)}
-                ${createEngineerCards(internsArray)}
+                ${createInternCards(internsArray)}
             </div>
         </body>
         </html>
