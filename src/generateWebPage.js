@@ -1,15 +1,29 @@
-let EngineerArray = [];
-let internArray = [];
-
 function createManagerCard(manager) {
     return `
-        ${manager.name}
-        ${manager.id}
-        ${manager.email}
-        ${manager.officeNumber}`
+        <div>
+            ${manager.name}
+            ${manager.id}
+            ${manager.email}
+            ${manager.officeNumber}
+        </div>`
 }
 
-function generateWebPage(employee) {
+function createEngineerCards(engineersArray) {
+    htmlEngineers = [];
+    for(let i = 0; i < engineersArray.length; i++) {
+        htmlEngineers.push(`
+        <div>
+            ${engineersArray[i].name}
+            ${engineersArray[i].id}
+            ${engineersArray[i].email}
+            ${engineersArray[i].github}
+        </div>`)
+    }
+
+    return htmlEngineers.toString();
+}
+
+function generateWebPage(manager, engineersArray) {
     return `
         <!DOCTYPE html>
         <html lang="en">
@@ -21,7 +35,8 @@ function generateWebPage(employee) {
         </head>
         <body>
             <div id="main">
-                ${createManagerCard(employee)}
+                ${createManagerCard(manager)}
+                ${createEngineerCards(engineersArray)}
             </div>
         </body>
         </html>
