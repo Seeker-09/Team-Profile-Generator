@@ -23,7 +23,22 @@ function createEngineerCards(engineersArray) {
     return htmlEngineers.toString();
 }
 
-function generateWebPage(manager, engineersArray) {
+function createInternCards(internsArray) {
+    htmlInterns = [];
+    for(let i = 0; i < engineersArray.length; i++) {
+        htmlEngineers.push(`
+        <div>
+            ${internsArray[i].name}
+            ${internsArray[i].id}
+            ${internsArray[i].email}
+            ${internsArray[i].school}
+        </div>`)
+    }
+
+    return htmlInterns.toString();
+}
+
+function generateWebPage(manager, engineersArray, internsArray) {
     return `
         <!DOCTYPE html>
         <html lang="en">
@@ -37,6 +52,7 @@ function generateWebPage(manager, engineersArray) {
             <div id="main">
                 ${createManagerCard(manager)}
                 ${createEngineerCards(engineersArray)}
+                ${createEngineerCards(internsArray)}
             </div>
         </body>
         </html>
