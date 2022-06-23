@@ -16,7 +16,7 @@ function createEngineerCards(engineersArray) {
             ${engineersArray[i].name}
             ${engineersArray[i].id}
             <a href="mailto:${engineersArray[i].email}">${engineersArray[i].email}</a>
-            ${engineersArray[i].github}
+            <a href="https://www.github.com/${engineersArray[i].github}" target="_blank">${engineersArray[i].github}</a>
         </div>`)
     }
 
