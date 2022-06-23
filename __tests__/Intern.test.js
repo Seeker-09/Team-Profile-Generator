@@ -8,3 +8,10 @@ test("creates an Intern object", () => {
     expect(intern.email).toBe("email");
     expect(intern.school).toBe("School");
 }) 
+
+test("returns 'Intern'", () => {
+    const intern = new Intern("David", 1, "email", 5, "School");
+    const role = intern.getRole();
+
+    expect(role).toBe("Intern");
+})

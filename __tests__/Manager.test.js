@@ -8,3 +8,10 @@ test("creates a Manager object", () => {
     expect(manager.email).toBe("email");
     expect(manager.officeNumber).toBe(5);
 }) 
+
+test("returns 'Manager'", () => {
+    const manager = new Manager("David", 1, "email", 5);
+    const role = manager.getRole();
+
+    expect(role).toBe("Manager");
+})
