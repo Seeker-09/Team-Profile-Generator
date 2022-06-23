@@ -3,7 +3,7 @@ function createManagerCard(manager) {
         <div>
             ${manager.name}
             ${manager.id}
-            ${manager.email}
+            <a href="mailto:${manager.email}">${manager.email}</a>
             ${manager.officeNumber}
         </div>`
 }
@@ -15,7 +15,7 @@ function createEngineerCards(engineersArray) {
         <div>
             ${engineersArray[i].name}
             ${engineersArray[i].id}
-            ${engineersArray[i].email}
+            <a href="mailto:${engineersArray[i].email}">${engineersArray[i].email}</a>
             ${engineersArray[i].github}
         </div>`)
     }
@@ -30,7 +30,7 @@ function createInternCards(internsArray) {
         <div>
             ${internsArray[i].name}
             ${internsArray[i].id}
-            ${internsArray[i].email}
+            <a href="mailto:${internsArray[i].email}">${internsArray[i].email}</a>
             ${internsArray[i].school}
         </div>`)
     }
